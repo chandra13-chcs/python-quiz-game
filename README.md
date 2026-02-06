@@ -36,4 +36,4 @@ This project was created to practice Python basics like:
 4. Run the command:
 
 ```bash
-python main.py
+gui_quiz.py
