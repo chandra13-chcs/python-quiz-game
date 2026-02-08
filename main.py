@@ -4,78 +4,78 @@ import tkinter as tk
 questions = [
     {
         "question": "What is the capital of India?",
-        "options": ["Mumbai", "Delhi", "Chennai", "Kolkata"],
-        "answer": "Delhi"
+        "options": ["A. Mumbai", "B. Delhi", "C. Chennai", "D. Kolkata"],
+        "answer": "B"
     },
     {
-    "question": "If a batsman scores a boundary (4), how many runs are added?",
-    "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
-    "answer": "b"
+        "question": "If a batsman scores a boundary (4), how many runs are added?",
+        "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
+        "answer": "B"
     },
     {
-    "question": "If a bowler bowls 6 legal balls, it is called?",
-    "options": ["A. Spell", "B. Over", "C. Session", "D. Set"],
-    "answer": "b"
+        "question": "If a bowler bowls 6 legal balls, it is called?",
+        "options": ["A. Spell", "B. Over", "C. Session", "D. Set"],
+        "answer": "B"
     },
     {
-    "question": "If all cats are animals and some animals are black, are all cats black?",
-    "options": ["A. Yes", "B. No", "C. Maybe", "D. Cannot say"],
-    "answer": "d"
+        "question": "If all cats are animals and some animals are black, are all cats black?",
+        "options": ["A. Yes", "B. No", "C. Maybe", "D. Cannot say"],
+        "answer": "D"
     },
     {
-    "question": "Which number comes next: 2, 4, 8, 16, ?",
-    "options": ["A. 18", "B. 24", "C. 32", "D. 64"],
-    "answer": "c"
+        "question": "Which number comes next: 2, 4, 8, 16, ?",
+        "options": ["A. 18", "B. 24", "C. 32", "D. 64"],
+        "answer": "C"
     },
     {
-    "question": "If today is Monday, what day will it be after 10 days?",
-    "options": ["A. Wednesday", "B. Thursday", "C. Friday", "D. Saturday"],
-    "answer": "b"
+        "question": "If today is Monday, what day will it be after 10 days?",
+        "options": ["A. Wednesday", "B. Thursday", "C. Friday", "D. Saturday"],
+        "answer": "B"
     },
     {
-    "question": "Which situation gives a batsman out 'LBW'?",
-    "options": [
-        "A. Ball hits bat first",
-        "B. Ball hits pad outside leg stump",
-        "C. Ball hits pad in line and would hit stumps",
-        "D. Ball hits helmet"
-    ],
-    "answer": "c"
+        "question": "Which situation gives a batsman out 'LBW'?",
+        "options": [
+            "A. Ball hits bat first",
+            "B. Ball hits pad outside leg stump",
+            "C. Ball hits pad in line and would hit stumps",
+            "D. Ball hits helmet"
+        ],
+        "answer": "C"
     },
     {
         "question": "Which language is this quiz written in?",
-        "options": ["Java", "C++", "Python", "HTML"],
-        "answer": "Python"
+        "options": ["A. Java", "B. C++", "C. Python", "D. HTML"],
+        "answer": "C"
     },
     {
-    "question": "What will be the output of: print(2 + 3 * 4)?",
-    "options": ["A. 20", "B. 14", "C. 24", "D. 9"],
-    "answer": "b"
+        "question": "What will be the output of: print(2 + 3 * 4)?",
+        "options": ["A. 20", "B. 14", "C. 24", "D. 9"],
+        "answer": "B"
     },
     {
-    "question": "Which condition will run the code inside an if statement?",
-    "options": ["A. True", "B. False", "C. None", "D. 0"],
-    "answer": "a"
+        "question": "Which condition will run the code inside an if statement?",
+        "options": ["A. True", "B. False", "C. None", "D. 0"],
+        "answer": "A"
     },
     {
-    "question": "What is the result of: 10 // 3?",
-    "options": ["A. 3.33", "B. 3", "C. 4", "D. 10"],
-    "answer": "b"
+        "question": "What is the result of: 10 // 3?",
+        "options": ["A. 3.33", "B. 3", "C. 4", "D. 10"],
+        "answer": "B"
     },
     {
-    "question": "Which loop is best when you don't know how many times to repeat?",
-    "options": ["A. for", "B. while", "C. if", "D. print"],
-    "answer": "b"
+        "question": "Which loop is best when you don't know how many times to repeat?",
+        "options": ["A. for", "B. while", "C. if", "D. print"],
+        "answer": "B"
     },
     {
         "question": "What does CPU stand for?",
         "options": [
-            "Central Processing Unit",
-            "Computer Power Unit",
-            "Central Program Utility",
-            "Control Processing Unit"
+            "A. Central Processing Unit",
+            "B. Computer Power Unit",
+            "C. Central Program Utility",
+            "D. Control Processing Unit"
         ],
-        "answer": "Central Processing Unit"
+        "answer": "A"
     }
 ]
 
@@ -95,7 +95,11 @@ def load_question():
 def check_answer(selected):
     global score, current_question
 
-    if selected == questions[current_question]["answer"]:
+    # Get first letter from selected option
+    selected_letter = selected[0].upper()
+    correct_letter = questions[current_question]["answer"].upper()
+
+    if selected_letter == correct_letter:
         score += 1
 
     current_question += 1
